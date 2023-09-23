@@ -1,0 +1,38 @@
+<form role="form" method="POST" action="{{ url_for('game_choice') }}">
+    <table class="table">
+        <tr class="tr-head">
+          <th class="th">Choose</th>
+          <th class="th">Worth</th>
+          <th class="th">Rule</th>
+          <th class="th">Already Scored</th>
+        </tr>
+        {% for i in range(13) %}
+        <tr>
+          <td class="td">
+            {% if names[i] in used_rules %}
+              X
+            {% else %}
+              <input class="radio" type="radio" name="value" value="{{ names[i] }}">
+            {% endif %}
+          </td>
+          <td class="td">
+            {% if names[i] in used_rules %}
+              -
+            {% else %}
+              {{ points[i] }}
+            {% endif %}
+          </td>
+          <td class="td">{{ names[i] }}</td>
+          <td class="td">
+            {% if sb.get_points(names[i]) == -1 %}
+              0
+            {% else %}
+              {{ sb.get_points(names[i]) }}</td>
+              {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+    <div class="row">
+        <button type="submit" class="my-btn">Välj</button>
+    </div>
+</form>

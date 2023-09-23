@@ -1,0 +1,13 @@
+<form role="form" method="POST" action="{{ url_for('game_choice') }}">
+    <div class="row">
+        {% for die in range(5) %}
+            <div class="dice">
+                <div><img src="{{ url_for('static',filename=hand.dice[die].get_image()) }}"></div>
+                <input class="check" type="checkbox" name="{{ die }}" value="reroll">
+            </div>
+        {% endfor %}
+    </div>
+    <div class="row">
+        <button type="submit" class="my-btn">Slå om</button>
+    </div>
+</form>

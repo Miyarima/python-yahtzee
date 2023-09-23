@@ -1,0 +1,21 @@
+{% include 'header.html' %}
+
+<div class="container" role="main">
+    <div class="container" style="min-height:20em">
+        <div class="jumbotron">
+            <h1>Ett spel med fem tärningar!</h1>
+        </div>
+        <form role="form" method="POST" action="{{ url_for('init') }}">
+            <p class="center">Hur många spelare vill du ha?</p>
+            <div class="row">
+                <input class="input" type="input" name="players" value="" placeholder="Antal...">
+            </div>
+            <div class="row">
+                <button type="submit" class="btn btn-success btn-lg btn-block">Starta spelet!</button>
+                {# <a type="submit" href="{{ url_for('init') }}"  class="btn btn-success btn-lg btn-block">Starta spelet!</a> #}
+            </div>
+        </form>
+    </div>
+</div>
+
+{% include 'footer.html' %}

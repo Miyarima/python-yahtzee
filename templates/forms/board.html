@@ -1,0 +1,21 @@
+<form role="form" method="POST" action="{{ url_for('leaderboard_remove') }}">
+    <table class="table">
+        <tr class="tr-head">
+          <th class="th">Player</th>
+          <th class="th">Points</th>
+          <th class="th">Delete Entery</th>
+        </tr>
+        {% for i in range(lb.entries.size()) %}
+          <tr>
+            <td class="td">{{ lb_list[i][0] }}</td>
+            <td class="td">{{ lb_list[i][1] }}</td>
+            <td class="td">
+                <input class="radio" type="radio" name="value" value="{{ lb_list[i][2] }}">
+            </td>
+          </tr>
+        {% endfor %}
+    </table>
+    <div class="row">
+        <button type="submit" class="my-btn">Ta bort</button>
+    </div>
+</form>

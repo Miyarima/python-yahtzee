@@ -1,0 +1,7 @@
+<form role="form" method="POST" action="{{ url_for('leaderboard_add') }}">
+    <div class="row">
+        <input class="input" type="input" name="name" value="" placeholder="Ditt namn...">
+        <input type="hidden" name="points" value="{{ max_points }}">
+        <button type="submit" class="my-btn">Spara</button>
+    </div>
+</form>

@@ -1,0 +1,22 @@
+{% include 'header.html' %}
+
+<div class="container" role="main">
+    <div class="page-header">
+        <h1 class="text-center">Ett spel med fem tärningar</h1>
+    </div>
+    <div class="winner-row">
+        {% for player in players %}
+            <p>Spelare: {{ player[0] }} | Poäng: {{ player[1] }}</p>
+        {% endfor %}
+    </div>
+    <div class="finished">
+        <div class="row">
+            <h2 class="text-center">{{ winning_player }} vann med {{ max_points }} poäng</h2>
+        </div>
+        <div class="row">
+            {% include 'forms/name.html' %}
+        </div>
+    </div>
+</div>
+
+{% include 'footer.html' %}
